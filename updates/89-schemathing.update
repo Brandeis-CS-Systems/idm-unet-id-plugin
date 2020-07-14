@@ -1,3 +1,3 @@
 dn: cn=users,cn=accounts,$SUFFIX
 # god I hope this works
-remove:aci: (targetattr = "unetID")(targetfilter = "(objectclass=unetUser)")(version=0.1;acl "Read unet id attributes"; allow(read) userdn="ldap:///all";)
+remove:aci: (targetattr = "unetID")(targetfilter = "(objectclass=unetUser)")(version=0.1;acl "Read unet id attributes"; allow(write) userdn="ldap:///self";)
