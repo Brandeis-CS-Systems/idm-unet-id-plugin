@@ -2,7 +2,6 @@ define([
     'freeipa/phases',
     'freeipa/ipa'
 ], function(phases, IPA) {
-    console.log("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")
     function get_item(array, attr, value) {
 
         for (var i = 0, l = array.length; i < l; i++) {
