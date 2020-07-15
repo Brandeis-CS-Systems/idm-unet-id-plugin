@@ -1,3 +1,3 @@
 # idm-unet-id-plugin
 
-https://github.com/fedora-infra/freeipa-fas
+Somewhat poorly based on https://github.com/fedora-infra/freeipa-fas
