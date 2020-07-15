@@ -10,7 +10,7 @@ if "unetUser" not in user.possible_objectclasses:
 unetuser_attributes = ["unetID"]
 user.default_attributes.extend(unetuser_attributes)
 takes_params = (
-    Str('unetid',
+    Str('unetid?',
         cli_name="unetid",
         maxlength=64,
         label=_("User UNET uid")),
@@ -41,7 +41,8 @@ def usermod_precallback(self, ldap, dn, entry, attrs_list,*keys, **options):
     if 'objectclass' not in entry.keys():
         old_entry = ldap.get_entry(dn, ['objectclass'])
         entry['objectclass'] = old_entry['objectclass']
-    entry['objectclass'].append('unetUser')
+    if not self.obj.has_objectclass('unetUser'):
+        entry['objectclass'].append('unetUser')
     return dn
 
 user_mod.register_pre_callback(usermod_precallback)
