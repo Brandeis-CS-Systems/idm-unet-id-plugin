@@ -31,17 +31,17 @@ user.managed_permissions.update(
     }
 )
 
-def useradd_precallback(self, ldap, dn, entry, attrs_list,*keys, **options):
-    entry['objectclass'].append('unetuser')
-    return dn
+# def useradd_precallback(self, ldap, dn, entry, attrs_list,*keys, **options):
+#     entry['objectclass'].append('unetuser')
+#     return dn
 
-user_add.register_pre_callback(useradd_precallback)
+# user_add.register_pre_callback(useradd_precallback)
 
 def usermod_precallback(self, ldap, dn, entry, attrs_list,*keys, **options):
     if 'objectclass' not in entry.keys():
         old_entry = ldap.get_entry(dn, ['objectclass'])
         entry['objectclass'] = old_entry['objectclass']
-    if not self.obj.has_objectclass('unetuser'):
+    if not self.obj.has_objectclass(entry["objectclass"], 'unetuser'):
         entry['objectclass'].append('unetuser')
     return dn
 
