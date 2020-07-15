@@ -1,8 +1,8 @@
 from ipalib import _
 from ipalib.parameters import Str
 
-from ipa.plugins.baseuser import baseuser
-from ipa.plugins.user import user, user_add, user_mod
+from ipaserver.plugins.baseuser import baseuser
+from ipaserver.plugins.user import user, user_add, user_mod
 
 if "unetUser" not in baseuser.possible_objectclasses:
     baseuser.possible_objectclasses.append("unetUser")
