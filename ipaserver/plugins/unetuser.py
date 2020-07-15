@@ -1,5 +1,5 @@
 from ipalib import _
-from ipalib.params import Str
+from ipalib.parameters import Str
 
 from ipa.plugins.baseuser import baseuser
 from ipa.plugins.user import user, user_add, user_mod
