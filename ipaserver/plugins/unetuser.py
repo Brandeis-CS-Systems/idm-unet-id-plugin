@@ -13,7 +13,7 @@ takes_params = (
     Str('unetid',
         cli_name="unetid",
         maxlength=64,
-        label=_("User UNET uid"))
+        label=_("User UNET uid")),
 )
 
 user.takes_params += takes_params
