@@ -4,10 +4,10 @@ from ipalib.parameters import Str
 from ipaserver.plugins.baseuser import baseuser
 from ipaserver.plugins.user import user, user_add, user_mod
 
-if "unetUser" not in user.possible_objectclasses:
-    user.possible_objectclasses.append("unetUser")
+if "unetuser" not in user.possible_objectclasses:
+    user.possible_objectclasses.append("unetuser")
 
-unetuser_attributes = ["unetID"]
+unetuser_attributes = ["unetid"]
 user.default_attributes.extend(unetuser_attributes)
 takes_params = (
     Str('unetid?',
@@ -32,7 +32,7 @@ user.managed_permissions.update(
 )
 
 def useradd_precallback(self, ldap, dn, entry, attrs_list,*keys, **options):
-    entry['objectclass'].append('unetUser')
+    entry['objectclass'].append('unetuser')
     return dn
 
 user_add.register_pre_callback(useradd_precallback)
@@ -41,8 +41,8 @@ def usermod_precallback(self, ldap, dn, entry, attrs_list,*keys, **options):
     if 'objectclass' not in entry.keys():
         old_entry = ldap.get_entry(dn, ['objectclass'])
         entry['objectclass'] = old_entry['objectclass']
-    if not self.obj.has_objectclass('unetUser'):
-        entry['objectclass'].append('unetUser')
+    if not self.obj.has_objectclass('unetuser'):
+        entry['objectclass'].append('unetuser')
     return dn
 
 user_mod.register_pre_callback(usermod_precallback)
