@@ -8,7 +8,7 @@ if "unetUser" not in baseuser.possible_objectclasses:
     baseuser.possible_objectclasses.append("unetUser")
 
 unetuser_attributes = ["unetID"]
-baseuser.default_attributes.extend(unetuser_attributes)
+user.default_attributes.extend(unetuser_attributes)
 takes_params = (
     Str('unetid',
         cli_name="unetid",
