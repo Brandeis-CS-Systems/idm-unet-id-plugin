@@ -22,7 +22,7 @@ user.managed_permissions.update(
     {
         "System: Read UNET ID": {
             "replaces_global_anonymous_aci": True,
-            "ipapermbindruletype": "anonymous",
+            "ipapermbindruletype": "all",
             "ipapermright": {"read", "search", "compare"},
             "ipapermtargetfilter": ["(objectclass=unetUser)"],
             "ipapermdefaultattr": set(unetuser_attributes),
