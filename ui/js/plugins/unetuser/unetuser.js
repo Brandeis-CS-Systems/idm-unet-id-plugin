@@ -14,11 +14,28 @@ define([
         [IPA.user.entity_spec, IPA.stageuser.stageuser_spec].forEach(function(spec) {
             var facet = get_item(spec.facets, '$type', 'details')
             var section = get_item(facet.sections, 'name', 'identity')
-            section.fields.push({
-                name: 'unetid',
-                flags: ['w_if_no_aci'],
-                label: 'Unet ID'
-            })
+            section.fields.concat([
+                {
+                    name: 'unetid',
+                    flags: ['w_if_no_aci'],
+                    label: 'Unet ID'
+                },
+                {
+                    name: 'sponsor',
+                    flags: ['w_if_no_aci'],
+                    label: 'Sponsor'   
+                },
+                {
+                    name: 'fwdemail',
+                    flags: ['w_if_no_aci'],
+                    label: "Forward email?"
+                },
+                {
+                    name: 'expected graduation',
+                    flags: ['w_if_no_aci'],
+                    label: "Expected graduation year"
+                }
+        ])
             
         })
         return true
