@@ -14,7 +14,7 @@ define([
         [IPA.user.entity_spec, IPA.stageuser.stageuser_spec].forEach(function(spec) {
             var facet = get_item(spec.facets, '$type', 'details')
             var section = get_item(facet.sections, 'name', 'identity')
-            section.fields.concat([
+            section.fields.push(
                 {
                     name: 'unetid',
                     flags: ['w_if_no_aci'],
@@ -35,7 +35,7 @@ define([
                     flags: ['w_if_no_aci'],
                     label: "Expected graduation year"
                 }
-        ])
+        )
             
         })
         return true
