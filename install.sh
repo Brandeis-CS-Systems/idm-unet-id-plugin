@@ -10,9 +10,12 @@ cp ui/js/plugins/unetuser/unetuser.js /usr/share/ipa/ui/js/plugins/unetuser/
 
 
 cp ipaserver/plugins/*.py ${SITE_PACKAGES}/ipaserver/plugins
-python3 -m compileall ${SITE_PACKAGES}/ipaserver/plugins
 
 ipa-ldap-updater \
     -S /usr/share/ipa/schema.d/89-schemathing.ldif
+    
+python3 -m compileall ${SITE_PACKAGES}/ipaserver/plugins
+
+
 
 ipactl restart
