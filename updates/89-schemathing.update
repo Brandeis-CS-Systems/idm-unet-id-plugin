@@ -1,7 +1,0 @@
-dn: cn=schema
-changetype: modify
-delete: objectclasses
-objectclasses: ( 2.16.840.1.113730.3.8.24.2.1 )
--
-add: objectclasses
-objectClasses: ( 2.16.840.1.113730.3.8.24.2.1 NAME 'unetuser' DESC 'unet user ID objectClass' AUXILIARY MAY ( unetid $ sponsor $ fwdemail $ expectedgraduation ) X-ORIGIN 'Brandeis CS v1' )
