@@ -31,7 +31,7 @@ define([
                     label: "Forward email?"
                 },
                 {
-                    name: 'expected graduation',
+                    name: 'expectedgraduation',
                     flags: ['w_if_no_aci'],
                     label: "Expected graduation year"
                 }
