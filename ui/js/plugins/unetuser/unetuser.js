@@ -21,6 +21,11 @@ define([
                     label: 'Unet ID'
                 },
                 {
+                    name: 'allowunsetreset',
+                    flags: ['w_if_no_aci'],
+                    label: 'Allow reset using UNET ID?'
+                },
+                {
                     name: 'sponsor',
                     flags: ['w_if_no_aci'],
                     label: 'Sponsor'   

@@ -7,7 +7,7 @@ from ipaserver.plugins.user import user, user_add, user_mod
 if "unetuser" not in user.possible_objectclasses:
     user.possible_objectclasses.append("unetuser")
 
-unetuser_attributes = ["unetid", "sponsor", "fwdemail", "expectedgraduation"]
+unetuser_attributes = ["unetid", "sponsor", "fwdemail", "expectedgraduation", "allowunetreset"]
 user.default_attributes.extend(unetuser_attributes)
 takes_params = (
     Str('unetid?',
@@ -23,7 +23,10 @@ takes_params = (
         label="Forward email?"),
     Int('expectedgraduation?',
         cli_name='expectedgraduation',
-        label="Expected graduation year")
+        label=_("Expected graduation year")),
+    Bool('allowunetreset?',
+        cli_name='allowunetreset',
+        label=_("Allow reset with UNET ID"))
 )
 
 user.takes_params += takes_params
