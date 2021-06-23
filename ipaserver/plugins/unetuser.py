@@ -3,6 +3,7 @@ from ipalib.parameters import Str, Bool, Int
 
 from ipaserver.plugins.baseuser import baseuser
 from ipaserver.plugins.user import user, user_add, user_mod
+from ipaserver.plugins.stageuser import stageuser_add, stageuser_mod
 
 if "unetuser" not in user.possible_objectclasses:
     user.possible_objectclasses.append("unetuser")
@@ -49,6 +50,7 @@ def useradd_precallback(self, ldap, dn, entry, attrs_list,*keys, **options):
     return dn
 
 user_add.register_pre_callback(useradd_precallback)
+stageuser_add.register_pre_callback(useradd_precallback)
 
 def usermod_precallback(self, ldap, dn, entry, attrs_list,*keys, **options):
     if 'objectclass' not in entry.keys():
@@ -59,3 +61,4 @@ def usermod_precallback(self, ldap, dn, entry, attrs_list,*keys, **options):
     return dn
 
 user_mod.register_pre_callback(usermod_precallback)
+stageuser_mod.register_pre_callback(usermod_precallback)
