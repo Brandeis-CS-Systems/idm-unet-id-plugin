@@ -32,7 +32,7 @@ takes_params = (
 )
 
 user.takes_params += takes_params
-stageuser.takes_params = baseuser.takes_params + takes_params
+stageuser.takes_params += takes_params
 
 user.managed_permissions.update(
     {
