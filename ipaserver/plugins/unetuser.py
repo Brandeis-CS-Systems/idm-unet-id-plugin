@@ -43,7 +43,7 @@ read_unet_id_permission = {
     },
 }
 user.managed_permissions.update(read_unet_id_permission)
-stageuser.managed_permissions.update(read_unet_id_permission)
+# stageuser.managed_permissions.update(read_unet_id_permission)
 
 def useradd_precallback(self, ldap, dn, entry, attrs_list,*keys, **options):
     entry['objectclass'].append('unetuser')
