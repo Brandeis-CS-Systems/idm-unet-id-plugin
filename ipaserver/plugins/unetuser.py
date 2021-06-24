@@ -36,7 +36,8 @@ stageuser.takes_params += takes_params
 read_unet_id_permission = {
     "System: Read UNET ID": {
         "replaces_global_anonymous_aci": True,
-        "ipapermbindruletype": "all",
+        # "ipapermbindruletype": "all",
+        "ipapermbindruletype": "anonymous",
         "ipapermright": {"read", "search", "compare"},
         "ipapermtargetfilter": ["(objectclass=unetuser)"],
         "ipapermdefaultattr": set(unetuser_attributes),
