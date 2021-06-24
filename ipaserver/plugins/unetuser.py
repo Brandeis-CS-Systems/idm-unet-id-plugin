@@ -40,7 +40,13 @@ read_unet_id_permission = {
         "ipapermbindruletype": "anonymous",
         "ipapermright": {"read", "search", "compare"},
         "ipapermtargetfilter": ["(objectclass=unetuser)"],
-        "ipapermdefaultattr": set(unetuser_attributes),
+        "ipapermdefaultattr": {
+            "unetid",
+            "sponsor",
+            "fwdemail",
+            "expectedgraduation",
+            "allowunetreset"
+        },
     },
 }
 user.managed_permissions.update(read_unet_id_permission)
