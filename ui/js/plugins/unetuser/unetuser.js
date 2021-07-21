@@ -31,11 +31,6 @@ define([
                     label: 'Sponsor'   
                 },
                 {
-                    name: 'fwdemail',
-                    flags: ['w_if_no_aci'],
-                    label: "Forward email?"
-                },
-                {
                     name: 'expectedgraduation',
                     flags: ['w_if_no_aci'],
                     label: "Expected graduation year"

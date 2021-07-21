@@ -10,7 +10,6 @@ if "unetuser" not in user.possible_objectclasses:
 unetuser_attributes = [
     "unetid",
     "sponsor",
-    "fwdemail",
     "expectedgraduation",
     "allowunetreset",
 ]
@@ -20,7 +19,6 @@ stageuser.default_attributes.extend(unetuser_attributes)
 takes_params = (
     Str("unetid?", cli_name="unetid", maxlength=64, label=_("User UNET uid")),
     Str("sponsor?", cli_name="sponsor", maxlength=64, label=_("Sponsor")),
-    Bool("fwdemail?", cli_name="fwdemail", label="Forward email?"),
     Int(
         "expectedgraduation?",
         cli_name="expectedgraduation",
