@@ -1,7 +1,8 @@
-# idm-unet-id-plugin
+# idm-brandeiscosciperson-plugin
 
-Extends the Red Hat IDM 389ds schema to include fields related to CS
-user accounts.
+Extends the Red Hat IDM 389ds schema to include an objectclass called
+`brandeiscosciperson`. This objectclass contains attributes specific to
+Brandeis CS users.
 
 Helpful links:
 * https://www.freeipa.org/images/5/5b/FreeIPA33-extending-freeipa.pdf

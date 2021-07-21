@@ -5,8 +5,8 @@ SITE_PACKAGES=$(python3 -c 'from sys import version_info as v; print(f"/usr/lib/
 
 cp schema.d/89-schemathing.ldif /usr/share/ipa/schema.d/
 
-mkdir -p -m 755 /usr/share/ipa/ui/js/plugins/unetuser
-cp -v ui/js/plugins/unetuser/unetuser.js /usr/share/ipa/ui/js/plugins/unetuser/
+mkdir -p -m 755 /usr/share/ipa/ui/js/plugins/brandeiscosciperson
+cp -v ui/js/plugins/brandeiscosciperson/brandeiscosciperson.js /usr/share/ipa/ui/js/plugins/brandeiscosciperson/
 
 
 cp -v ipaserver/plugins/*.py ${SITE_PACKAGES}/ipaserver/plugins
