@@ -34,7 +34,7 @@ user.takes_params += takes_params
 stageuser.takes_params += takes_params
 
 read_unet_id_permission = {
-    "System: Read UNET ID": {
+    "System: Read COSCI Person Attributes": {
         "replaces_global_anonymous_aci": True,
         "ipapermbindruletype": "all",
         # "ipapermbindruletype": "anonymous",
