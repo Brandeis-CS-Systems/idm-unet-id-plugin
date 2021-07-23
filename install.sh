@@ -16,6 +16,6 @@ ipa-ldap-updater \
 
 python3 -m compileall ${SITE_PACKAGES}/ipaserver/plugins
 
-chcon system_u:object_r:lib_t:s0 /usr/lib/python3.6/site-packages/ipaserver/plugins/unetuser.py
+chcon system_u:object_r:lib_t:s0 /usr/lib/python3.6/site-packages/ipaserver/plugins/brandeiscosciperson.py
 
 ipactl restart
