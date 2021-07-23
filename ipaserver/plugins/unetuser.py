@@ -4,17 +4,17 @@ from ipalib.parameters import Str, Bool, Int
 from ipaserver.plugins.user import user, user_add, user_mod
 from ipaserver.plugins.stageuser import stageuser, stageuser_add, stageuser_mod
 
-if "unetuser" not in user.possible_objectclasses:
-    user.possible_objectclasses.append("unetuser")
+if "brandeiscosciperson" not in user.possible_objectclasses:
+    user.possible_objectclasses.append("brandeiscosciperson")
 
-unetuser_attributes = [
+brandeiscosciperson_attributes = [
     "unetid",
     "sponsor",
     "expectedgraduation",
     "allowunetreset",
 ]
-user.default_attributes.extend(unetuser_attributes)
-stageuser.default_attributes.extend(unetuser_attributes)
+user.default_attributes.extend(brandeiscosciperson_attributes)
+stageuser.default_attributes.extend(brandeiscosciperson_attributes)
 
 takes_params = (
     Str("unetid?", cli_name="unetid", maxlength=64, label=_("User UNET uid")),
@@ -39,8 +39,8 @@ read_unet_id_permission = {
         "ipapermbindruletype": "all",
         # "ipapermbindruletype": "anonymous",
         "ipapermright": {"read", "search", "compare"},
-        "ipapermtargetfilter": ["(objectclass=unetuser)"],
-        "ipapermdefaultattr": set(unetuser_attributes),
+        "ipapermtargetfilter": ["(objectclass=brandeiscosciperson)"],
+        "ipapermdefaultattr": set(brandeiscosciperson_attributes),
     },
 }
 user.managed_permissions.update(read_unet_id_permission)
@@ -48,7 +48,7 @@ user.managed_permissions.update(read_unet_id_permission)
 
 
 def useradd_precallback(self, ldap, dn, entry, attrs_list, *keys, **options):
-    entry["objectclass"].append("unetuser")
+    entry["objectclass"].append("brandeiscosciperson")
     return dn
 
 
@@ -60,8 +60,8 @@ def usermod_precallback(self, ldap, dn, entry, attrs_list, *keys, **options):
     if "objectclass" not in entry.keys():
         old_entry = ldap.get_entry(dn, ["objectclass"])
         entry["objectclass"] = old_entry["objectclass"]
-    if not self.obj.has_objectclass(entry["objectclass"], "unetuser"):
-        entry["objectclass"].append("unetuser")
+    if not self.obj.has_objectclass(entry["objectclass"], "brandeiscosciperson"):
+        entry["objectclass"].append("brandeiscosciperson")
     return dn
 
 
