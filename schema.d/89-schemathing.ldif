@@ -1,10 +1,8 @@
 # Base OID: 2.16.840.1.113730
 # ObjectClasses: 2.16.840.1.113730.3.8.12 as per https://github.com/freeipa/freeipa/blob/0e21d933916b71d901310db6d16694401c289dd9/install/share/60basev3.ldif
 dn: cn=schema
-# Just adding UnetID field
 attributeTypes: ( 2.16.840.1.113730.3.8.24.1.1 NAME 'unetid' EQUALITY caseIgnoreMatch SUBSTR caseIgnoreSubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 X-ORIGIN 'Brandeis CS v1' )
 attributeTypes: ( 2.16.840.1.113730.3.8.24.1.2 NAME 'sponsor' EQUALITY caseIgnoreMatch SUBSTR caseIgnoreSubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 X-ORIGIN 'Brandeis CS v1' )
-attributeTypes: ( 2.16.840.1.113730.3.8.24.1.3 NAME 'fwdemail' EQUALITY booleanMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 X-ORIGIN 'Brandeis CS v1' )
-attributeTypes: ( 2.16.840.1.113730.3.8.24.1.4 NAME 'expectedgraduation' EQUALITY integerMatch ORDERING integerOrderingMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 X-ORIGIN 'Brandeis CS v1' )
+attributeTypes: ( 2.16.840.1.113730.3.8.24.1.3 NAME 'expectedgraduation' EQUALITY integerMatch ORDERING integerOrderingMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 X-ORIGIN 'Brandeis CS v1' )
 attributeTypes: ( 2.16.840.1.113730.3.8.24.1.4 NAME 'allowunetreset' EQUALITY booleanMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 X-ORIGIN 'Brandeis CS v1' )
-objectClasses: ( 2.16.840.1.113730.3.8.24.2.1 NAME 'unetuser' DESC 'unet user ID objectClass' AUXILIARY MAY ( unetid $ sponsor $ fwdemail $ expectedgraduation ) X-ORIGIN 'Brandeis CS v1' )
+objectClasses: ( 2.16.840.1.113730.3.8.24.2.1 NAME 'brandeiscosciperson' DESC 'Brandeis CS Person Object' AUXILIARY MAY ( unetid $ sponsor $ expectedgraduation $ allowunetreset ) X-ORIGIN 'Brandeis CS v1' )

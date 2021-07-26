@@ -9,8 +9,8 @@ define([
         }
         return null;
     }
-    var unetuser_plugin = {}
-    unetuser_plugin.add_unetuser_preop = function() {
+    var brandeiscosciperson_plugin = {}
+    brandeiscosciperson_plugin.add_brandeiscosciperson_preop = function() {
         [IPA.user.entity_spec, IPA.stageuser.stageuser_spec].forEach(function(spec) {
             var facet = get_item(spec.facets, '$type', 'details')
             var section = get_item(facet.sections, 'name', 'identity')
@@ -31,11 +31,6 @@ define([
                     label: 'Sponsor'   
                 },
                 {
-                    name: 'fwdemail',
-                    flags: ['w_if_no_aci'],
-                    label: "Forward email?"
-                },
-                {
                     name: 'expectedgraduation',
                     flags: ['w_if_no_aci'],
                     label: "Expected graduation year"
@@ -45,7 +40,7 @@ define([
         })
         return true
     }
-    phases.on('customization', unetuser_plugin.add_unetuser_preop)
+    phases.on('customization', brandeiscosciperson_plugin.add_brandeiscosciperson_preop)
 
-    return unetuser_plugin
+    return brandeiscosciperson_plugin
 })
