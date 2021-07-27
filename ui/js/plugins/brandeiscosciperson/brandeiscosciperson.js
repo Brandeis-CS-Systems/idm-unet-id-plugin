@@ -34,6 +34,11 @@ define([
                     name: 'expectedgraduation',
                     flags: ['w_if_no_aci'],
                     label: "Expected graduation year"
+                },
+                {
+                    name: 'favoriteicecream',
+                    flags: ['w_if_no_aci'],
+                    label: "Expected graduation year"
                 }
         )
             
