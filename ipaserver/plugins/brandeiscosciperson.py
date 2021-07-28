@@ -12,7 +12,7 @@ brandeiscosciperson_attributes = [
     "sponsor",
     "expectedgraduation",
     "allowunetreset",
-    "favoriteicecream",
+    "favoritemovie",
 ]
 user.default_attributes.extend(brandeiscosciperson_attributes)
 stageuser.default_attributes.extend(brandeiscosciperson_attributes)
@@ -31,10 +31,10 @@ takes_params = (
         label=_("Allow reset with UNET ID"),
     ),
     Str(
-        "favoriteicecream?",
-        cli_name="favoriteicecream",
+        "favoritemovie?",
+        cli_name="favoritemovie",
         maxlength=64,
-        label=_("Favorite ice cream flavor"),
+        label=_("Favorite movie"),
     ),
 )
 user.takes_params += takes_params
