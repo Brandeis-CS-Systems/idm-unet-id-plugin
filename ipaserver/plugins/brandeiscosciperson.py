@@ -30,9 +30,10 @@ takes_params = (
         cli_name="allowunetreset",
         label=_("Allow reset with UNET ID"),
     ),
-    Bool(
+    Str(
         "favoriteicecream?",
         cli_name="favoriteicecream",
+        maxlength=64,
         label=_("Favorite ice cream flavor"),
     ),
 )
