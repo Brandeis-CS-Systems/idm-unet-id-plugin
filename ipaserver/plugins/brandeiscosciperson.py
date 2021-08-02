@@ -17,7 +17,7 @@ user.default_attributes.extend(brandeiscosciperson_attributes)
 stageuser.default_attributes.extend(brandeiscosciperson_attributes)
 
 takes_params = (
-    Str("unetid?", cli_name="unetid", maxlength=64, label=_("User UNET uid")),
+    Str("unetid?", cli_name="unetid", maxlength=64, label=_("UNET ID")),
     Str("sponsor?", cli_name="sponsor", maxlength=64, label=_("Sponsor")),
     Int(
         "expectedgraduation?",
