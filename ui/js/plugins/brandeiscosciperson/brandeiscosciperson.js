@@ -22,6 +22,11 @@ define([
                 },
                 {
                     name: 'allowunetreset',
+                    type: '$radio',
+                    options: [
+                        { label: 'Yes', value: '1' },
+                        { label: 'No', value: '0' }
+                    ],
                     flags: ['w_if_no_aci'],
                     label: 'Allow reset using UNET ID?'
                 },
