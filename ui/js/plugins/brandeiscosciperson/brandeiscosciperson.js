@@ -21,7 +21,7 @@ define([
                     label: 'Unet ID'
                 },
                 {
-                    name: 'allowunsetreset',
+                    name: 'allowunetreset',
                     flags: ['w_if_no_aci'],
                     label: 'Allow reset using UNET ID?'
                 },
