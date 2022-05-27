@@ -33,17 +33,29 @@ takes_params = (
 user.takes_params += takes_params
 stageuser.takes_params += takes_params
 
-read_unet_id_permission = {
+read_cosci_person_attributes_permission = {
     "System: Read COSCI Person Attributes": {
         "replaces_global_anonymous_aci": True,
         "ipapermbindruletype": "all",
         # "ipapermbindruletype": "anonymous",
         "ipapermright": {"read", "search", "compare"},
         "ipapermtargetfilter": ["(objectclass=brandeiscosciperson)"],
-        "ipapermdefaultattr": set(brandeiscosciperson_attributes),
+        "ipapermdefaultattr": {"unetid", "sponsor", "expectedgraduation"},
     },
 }
-user.managed_permissions.update(read_unet_id_permission)
+
+read_allowunetreset_permission = {
+    "System: Read COSCI Person allowunetreset": {
+        "replaces_global_anonymous_aci": True,
+        "ipapermbindruletype": "self",
+        # "ipapermbindruletype": "anonymous",
+        "ipapermright": {"read", "search", "compare"},
+        "ipapermtargetfilter": ["(objectclass=brandeiscosciperson)"],
+        "ipapermdefaultattr": {"allowunetreset"},
+    },
+}
+user.managed_permissions.update(read_cosci_person_attributes_permission)
+user.managed_permissions.update(read_allowunetreset_permission)
 # stageuser.managed_permissions.update(read_unet_id_permission)
 
 
