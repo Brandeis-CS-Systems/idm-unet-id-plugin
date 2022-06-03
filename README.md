@@ -1,7 +1,7 @@
 # idm-brandeiscosciperson-plugin
 
 Extends the Red Hat IDM 389ds schema to include an objectclass called
-`brandeiscosciperson`. This objectclass contains attributes specific to
+`brandeiscosciperson`, which contains attributes specific to
 Brandeis CS users.
 
 Helpful links:

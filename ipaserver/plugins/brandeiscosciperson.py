@@ -44,17 +44,27 @@ read_cosci_person_attributes_permission = {
     },
 }
 
+read_personal_allowunetreset_permission = {
+    "System: Read Personal allowunetreset": {
+        "replaces_global_anonymous_aci": True,
+        "ipapermbindruletype": "self",
+        "ipapermright": {"read", "search", "compare"},
+        "ipapermtargetfilter": ["(objectclass=brandeiscosciperson)"],
+        "ipapermdefaultattr": {"allowunetreset"},
+    },
+}
+
 read_allowunetreset_permission = {
     "System: Read COSCI Person allowunetreset": {
         "replaces_global_anonymous_aci": True,
-        "ipapermbindruletype": "self",
-        # "ipapermbindruletype": "anonymous",
+        "ipapermbindruletype": "permission",
         "ipapermright": {"read", "search", "compare"},
         "ipapermtargetfilter": ["(objectclass=brandeiscosciperson)"],
         "ipapermdefaultattr": {"allowunetreset"},
     },
 }
 user.managed_permissions.update(read_cosci_person_attributes_permission)
+user.managed_permissions.update(read_personal_allowunetreset_permission)
 user.managed_permissions.update(read_allowunetreset_permission)
 # stageuser.managed_permissions.update(read_unet_id_permission)
 
